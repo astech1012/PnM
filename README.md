@@ -12,3 +12,8 @@ Please let me know if you have any questions, comments, insights, etc.
 To progress and innovation
 
 -astech
+
+Desired Functions:
+>> Data input
+>> Data cleaning
+>> Model Building (Regression/ Multiple Regression)
