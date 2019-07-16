@@ -19,5 +19,5 @@ Desired Functions:
 >> Model Building (Regression/ Multiple Regression)
 
 Pipeline
->>program flowchart
->>function erd
+>program flowchart
+>function erd
