@@ -2,14 +2,6 @@
 #install.packages("shinythemes")
 
 #  some inspo from https://rich.shinyapps.io/regression/
-# odbc()
-# con <- DBI::dbConnect(odbc::odbc(),
-#                       Driver       = "/opt/amazon/redshift/lib/libamazonredshiftodbc.dylib",
-#                       servername   = "rtbcluster-west2.cjgay0xd9jwq.us-west-2.redshift.amazonaws.com",
-#                       database     = "rtb",
-#                       UID          = "rtb_read",
-#                       PWD          = "RTB_password1",
-#                       Port         = 5439)
 
 #  Spend Installs CPI GOAL (LIST SIZE)
 
