@@ -2,6 +2,14 @@
 #install.packages("shinythemes")
 
 #  some inspo from https://rich.shinyapps.io/regression/
+# odbc()
+# con <- DBI::dbConnect(odbc::odbc(),
+#                       Driver       = "/opt/amazon/redshift/lib/libamazonredshiftodbc.dylib",
+#                       servername   = "rtbcluster-west2.cjgay0xd9jwq.us-west-2.redshift.amazonaws.com",
+#                       database     = "rtb",
+#                       UID          = "rtb_read",
+#                       PWD          = "RTB_password1",
+#                       Port         = 5439)
 
 #  Spend Installs CPI GOAL (LIST SIZE)
 
@@ -28,18 +36,18 @@ ols=function(data){
   n=nrow(indeps)
   if (is.null(ncol(indeps))){p=1}
   else{p=ncol(indeps)}
-  
+
   x<-cbind(constant = 1, as.matrix(indeps))
   y<-as.matrix(dep)
-  
+
   #beta estimation
   betas=solve(crossprod(x), crossprod(x,y))
-  
+
   # Computation of standard errors
   s2 <- sum((y - x%*%betas)^2)/(nrow(x) - ncol(x))
   VCV <- as.numeric(s2)*solve(t(x)%*%x)
   SE <- matrix(sqrt(diag(VCV)))
-  
+
   # Computation of t-statistics
   t <- betas/SE
   # Computation of p-values
@@ -116,7 +124,7 @@ server=shinyServer(function(input, output,session) {
     #Date
     #if (input$DateRange[,2] != en1) {
     #  subset(data, date_cet >= start & date_cet <= end)
-    #} 
+    #}
     if (input$app != "All") {
       data <- data[data$app == input$app,]
     }
@@ -153,7 +161,7 @@ server=shinyServer(function(input, output,session) {
     if(is.null(input$xvar)){return ()}
     coeffs(selectedMData())
   })
-  
+
 })
 
 
